@@ -9,7 +9,8 @@ phases:
       - echo Logging in to Amazon ECR....
       - aws --version
       # login to Elastic container registry
-      - eval $(aws ecr get-login --region us-east-2 --no-include-email | sed 's|https://||')
+      # - eval $(aws ecr get-login --region us-east-2 --no-include-email | sed 's|https://||')
+      - $(aws ecr get-login --no-include-email --region us-east-2)
   build:
     commands:
       - echo Build started on `date`
