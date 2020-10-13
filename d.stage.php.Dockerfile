@@ -83,7 +83,6 @@ RUN php artisan package:discover
 RUN yes | php artisan migrate:refresh --seed
 
 RUN php artisan key:generate
-RUN php artisan jwt:secret
 RUN php artisan route:cache && php artisan config:cache && php artisan view:cache
 
 # Finish composer
